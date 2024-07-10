@@ -1,0 +1,15 @@
+2024-07-07 23:37:07,390 INFO using config C:\Users\Sujay S C\AppData\Roaming\twarc\config
+2024-07-07 23:37:07,395 INFO creating config file: C:\Users\Sujay S C\AppData\Roaming\twarc\config
+2024-07-07 23:37:07,395 INFO creating config directory: C:\Users\Sujay S C\AppData\Roaming\twarc
+2024-07-07 23:39:23,550 INFO using config C:\Users\Sujay S C\AppData\Roaming\twarc\config
+2024-07-07 23:39:23,550 INFO creating HTTP session headers for app auth.
+2024-07-07 23:40:25,655 INFO using config C:\Users\Sujay S C\AppData\Roaming\twarc\config
+2024-07-07 23:40:25,655 INFO creating HTTP session headers for app auth.
+2024-07-07 23:40:25,695 INFO getting ('https://api.twitter.com/2/tweets/search/recent',) {'params': {'expansions': 'author_id,in_reply_to_user_id,referenced_tweets.id,referenced_tweets.id.author_id,entities.mentions.username,attachments.poll_ids,attachments.media_keys,geo.place_id,edit_history_tweet_ids', 'tweet.fields': 'attachments,author_id,context_annotations,conversation_id,created_at,entities,geo,id,in_reply_to_user_id,lang,public_metrics,text,possibly_sensitive,referenced_tweets,reply_settings,source,withheld,edit_controls,edit_history_tweet_ids', 'user.fields': 'created_at,description,entities,id,location,name,pinned_tweet_id,profile_image_url,protected,public_metrics,url,username,verified,verified_type,withheld', 'media.fields': 'alt_text,duration_ms,height,media_key,preview_image_url,type,url,width,variants,public_metrics', 'poll.fields': 'duration_minutes,end_datetime,id,options,voting_status', 'place.fields': 'contained_within,country,country_code,full_name,geo,id,name,place_type', 'start_time': '2021-01-01T00:00:00+00:00', 'end_time': '2024-12-31T23:59:59+00:00', 'query': 'bitcoin -is:retweet lang:en', 'max_results': 100}}
+2024-07-07 23:40:26,397 ERROR Unexpected HTTP response: <Response [403]>
+2024-07-07 23:41:15,398 INFO using config C:\Users\Sujay S C\AppData\Roaming\twarc\config
+2024-07-07 23:41:15,398 INFO creating HTTP session headers for app auth.
+2024-07-07 23:41:15,399 INFO creating config file: C:\Users\Sujay S C\AppData\Roaming\twarc\config
+2024-07-07 23:42:00,108 INFO using config C:\Users\Sujay S C\AppData\Roaming\twarc\config
+2024-07-07 23:42:00,109 INFO creating HTTP session headers for app auth.
+2024-07-07 23:42:00,110 INFO creating config file: C:\Users\Sujay S C\AppData\Roaming\twarc\config
