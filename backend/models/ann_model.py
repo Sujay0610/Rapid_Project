@@ -1,4 +1,3 @@
-#ANN model
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -34,11 +33,11 @@ def build_ann_model(input_dim):
     model.compile(optimizer='adam', loss='mean_squared_error')
     return model
 
-def plot_results(train, test, predictions, model_name, seq_length):
+def plot_results(train, test, predictions, model_name):
     plt.figure(figsize=(12, 6))
     plt.plot(train.index, train['Close'], label='Training Data')
     plt.plot(test.index, test['Close'], label='Actual Prices', color='blue')
-    plt.plot(test.index[seq_length:], predictions, label=f'{model_name} Predictions', color='red')
+    plt.plot(test.index, predictions, label=f'{model_name} Predictions', color='red')
     plt.legend()
     plt.show()
 
@@ -48,21 +47,25 @@ def calculate_mape(y_true, y_pred):
 def main():
     data = load_data('data/BTC-USD.csv')
     train_size = int(len(data) * 0.8)
-    train, test = data.iloc[:train_size], data.iloc[train_size:]
-
     seq_length = 60
+
+    # Prepare data for the entire dataset
     X, y, scaler = prepare_ann_data(data, seq_length)
+
+    # Split data into training and testing sets
     X_train, y_train = X[:train_size-seq_length], y[:train_size-seq_length]
     X_test, y_test = X[train_size-seq_length:], y[train_size-seq_length:]
 
     ann_model = build_ann_model(seq_length)
-    ann_model.fit(X_train, y_train, batch_size=1, epochs=50)
+    ann_model.fit(X_train, y_train, batch_size=1, epochs=5)
 
     ann_pred_scaled = ann_model.predict(X_test)
     ann_pred = scaler.inverse_transform(ann_pred_scaled).flatten()
 
-    test_true = test['Close'].values[seq_length:]
+    # Correctly align the test true values
+    test_true = data['Close'].values[train_size:]
 
+    # Ensure the lengths of predictions and true values match
     if len(ann_pred) != len(test_true):
         print("Warning: Lengths of ann_pred and test_true do not match!")
         min_len = min(len(ann_pred), len(test_true))
@@ -76,7 +79,7 @@ def main():
     print(f'ANN Model MAPE: {ann_mape}%')
 
     # Plotting results
-    plot_results(train, test, ann_pred, 'ANN', seq_length)
+    plot_results(data[:train_size], data[train_size:], ann_pred, 'ANN')
 
 if __name__ == "__main__":
     main()

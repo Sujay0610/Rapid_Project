@@ -66,7 +66,7 @@ def main():
     X_test = X_test.reshape((X_test.shape[0], X_test.shape[1], 1))
 
     lstm_model = build_lstm_model(seq_length)
-    lstm_model.fit(X_train, y_train, batch_size=1, epochs=1)
+    lstm_model.fit(X_train, y_train, batch_size=1, epochs=10)
 
     lstm_pred = lstm_model.predict(X_test)
     lstm_pred = scaler.inverse_transform(lstm_pred)
