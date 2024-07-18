@@ -7,16 +7,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>RapidEx - Buy & Sell Digital Assets In The RapidEx</title>
 
-  <!-- 
-    - favicon
-  -->
-  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+ <!-- favicon -->
+ <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.svg') }}" type="image/svg+xml">
 
-  <!-- 
-    - custom css link
-  -->
-  <link rel="stylesheet" href="./assets/css/style.css">
-
+ <!-- custom css link -->
+ <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/style.css') }}">
   <!-- 
     - google font link
   -->
@@ -35,7 +30,7 @@
     <div class="container">
 
       <a href="#" class="logo">
-        <img src="./assets/images/logo.svg" width="32" height="32" alt="RapidEx logo">
+        <img src="{{ url_for('static', filename='assets/images/logo.svg') }}" width="32" height="32" alt="RapidEx logo">
         RapidEx
       </a>
 
@@ -48,7 +43,7 @@
 
         
           <li class="navbar-item">
-            <a href="prediction.html" class="navbar-link" data-nav-link>Price Prediction</a>
+            <a href="/prediction" class="navbar-link" data-nav-link>Price Prediction</a>
           </li>
 
           
@@ -62,7 +57,7 @@
         <span class="line line-3"></span>
       </button>
 
-      <a href="#" class="btn btn-outline">Wallet</a>
+      <a href="https://portfolio.metamask.io" class="btn btn-outline">Wallet</a>
 
     </div>
   </header>
@@ -94,7 +89,7 @@
           </div>
 
           <figure class="hero-banner">
-            <img src="./assets/images/hero-banner.png" width="570" height="448" alt="hero banner" class="w-100">
+            <img src=".{{ url_for('static', filename='assets/images/hero-banner.png') }}" width="570" height="448" alt="hero banner" class="w-100">
           </figure>
 
         </div>
@@ -159,7 +154,7 @@
                 <div class="trend-card">
 
                   <div class="card-title-wrapper">
-                    <img src="./assets/images/coin-1.svg" width="24" height="24" alt="bitcoin logo">
+                    <img src="{{ url_for('static', filename='assets/images/coin-1.svg') }}" width="24" height="24" alt="bitcoin logo">
 
                     <a href="#" class="card-title">
                       Bitcoin <span class="span">BTC/USD</span>
@@ -181,7 +176,7 @@
                 <div class="trend-card active">
 
                   <div class="card-title-wrapper">
-                    <img src="./assets/images/coin-2.svg" width="24" height="24" alt="ethereum logo">
+                    <img src="{{ url_for('static', filename='assets/images/coin-2.svg') }}" width="24" height="24" alt="ethereum logo">
 
                     <a href="#" class="card-title">
                       Ethereum <span class="span">ETH/USD</span>
@@ -203,7 +198,7 @@
                 <div class="trend-card">
 
                   <div class="card-title-wrapper">
-                    <img src="./assets/images/coin-3.svg" width="24" height="24" alt="tether logo">
+                    <img src="{{ url_for('static', filename='assets/images/coin-3.svg') }}" width="24" height="24" alt="tether logo">
 
                     <a href="#" class="card-title">
                       Tether <span class="span">USDT/USD</span>
@@ -225,7 +220,7 @@
                 <div class="trend-card">
 
                   <div class="card-title-wrapper">
-                    <img src="./assets/images/coin-4.svg" width="24" height="24" alt="bnb logo">
+                    <img src="{{ url_for('static', filename='assets/images/coin-4.svg') }}" width="24" height="24" alt="bnb logo">
 
                     <a href="#" class="card-title">
                       BNB <span class="span">BNB/USD</span>
@@ -342,7 +337,7 @@
 
                   <td class="table-data">
                     <div class="wrapper">
-                      <img src="./assets/images/coin-1.svg" width="20" height="20" alt="Bitcoin logo" class="img">
+                      <img src="{{ url_for('static', filename='assets/images/coin-1.svg') }}" width="20" height="20" alt="Bitcoin logo" class="img">
 
                       <h3>
                         <a href="#" class="coin-name">Bitcoin <span class="span">BTC</span></a>
@@ -357,7 +352,7 @@
                   <td class="table-data market-cap">$880,423,640,582</td>
 
                   <td class="table-data">
-                    <img src="./assets/images/chart-1.svg" width="100" height="40" alt="profit chart" class="chart">
+                    <img src="{{ url_for('static', filename='assets/images/chart-1.svg') }}" width="100" height="40" alt="profit chart" class="chart">
                   </td>
 
                   <td class="table-data">
@@ -379,7 +374,7 @@
 
                   <td class="table-data">
                     <div class="wrapper">
-                      <img src="./assets/images/coin-2.svg" width="20" height="20" alt="Ethereum logo" class="img">
+                      <img src="{{ url_for('static', filename='assets/images/coin-1.svg') }}" width="20" height="20" alt="Ethereum logo" class="img">
 
                       <h3>
                         <a href="#" class="coin-name">Ethereum <span class="span">ETH</span></a>
@@ -394,7 +389,7 @@
                   <td class="table-data market-cap">$880,423,640,582</td>
 
                   <td class="table-data">
-                    <img src="./assets/images/chart-2.svg" width="100" height="40" alt="loss chart" class="chart">
+                    <img src="{{ url_for('static', filename='assets/images/chart-2.svg') }}" width="100" height="40" alt="loss chart" class="chart">
                   </td>
 
                   <td class="table-data">
@@ -416,7 +411,7 @@
 
                   <td class="table-data">
                     <div class="wrapper">
-                      <img src="./assets/images/coin-3.svg" width="20" height="20" alt="Tether logo" class="img">
+                      <img src="{{ url_for('static', filename='assets/images/coin-3.svg') }}" width="20" height="20" alt="Tether logo" class="img">
 
                       <h3>
                         <a href="#" class="coin-name">Tether <span class="span">USDT/USD</span></a>
@@ -431,7 +426,7 @@
                   <td class="table-data market-cap">$880,423,640,582</td>
 
                   <td class="table-data">
-                    <img src="./assets/images/chart-1.svg" width="100" height="40" alt="profit chart" class="chart">
+                    <img src="{{ url_for('static', filename='assets/images/chart-1.svg') }}" width="100" height="40" alt="profit chart" class="chart">
                   </td>
 
                   <td class="table-data">
@@ -453,7 +448,7 @@
 
                   <td class="table-data">
                     <div class="wrapper">
-                      <img src="./assets/images/coin-4.svg" width="20" height="20" alt="BNB logo" class="img">
+                      <img src="{{ url_for('static', filename='assets/images/coin-4.svg') }}" width="20" height="20" alt="BNB logo" class="img">
 
                       <h3>
                         <a href="#" class="coin-name">BNB <span class="span">BNB/USD</span></a>
@@ -468,7 +463,7 @@
                   <td class="table-data market-cap">$880,423,640,582</td>
 
                   <td class="table-data">
-                    <img src="./assets/images/chart-2.svg" width="100" height="40" alt="loss chart" class="chart">
+                    <img src="{{ url_for('static', filename='assets/images/chart-2.svg') }}" width="100" height="40" alt="loss chart" class="chart">
                   </td>
 
                   <td class="table-data">
@@ -490,7 +485,7 @@
 
                   <td class="table-data">
                     <div class="wrapper">
-                      <img src="./assets/images/coin-5.svg" width="20" height="20" alt="Solana logo" class="img">
+                      <img src="{{ url_for('static', filename='assets/images/coin-5.svg') }}" width="20" height="20" alt="Solana logo" class="img">
 
                       <h3>
                         <a href="#" class="coin-name">Solana <span class="span">SOL</span></a>
@@ -505,7 +500,7 @@
                   <td class="table-data market-cap">$880,423,640,582</td>
 
                   <td class="table-data">
-                    <img src="./assets/images/chart-1.svg" width="100" height="40" alt="profit chart" class="chart">
+                    <img src="{{ url_for('static', filename='assets/images/chart-1.svg') }}" width="100" height="40" alt="profit chart" class="chart">
                   </td>
 
                   <td class="table-data">
@@ -527,7 +522,7 @@
 
                   <td class="table-data">
                     <div class="wrapper">
-                      <img src="./assets/images/coin-6.svg" width="20" height="20" alt="XRP logo" class="img">
+                      <img src="{{ url_for('static', filename='assets/images/coin-6.svg') }}" width="20" height="20" alt="XRP logo" class="img">
 
                       <h3>
                         <a href="#" class="coin-name">XRP <span class="span">XRP</span></a>
@@ -542,7 +537,7 @@
                   <td class="table-data market-cap">$880,423,640,582</td>
 
                   <td class="table-data">
-                    <img src="./assets/images/chart-2.svg" width="100" height="40" alt="loss chart" class="chart">
+                    <img src="{{ url_for('static', filename='assets/images/chart-2.svg') }}" width="100" height="40" alt="loss chart" class="chart">
                   </td>
 
                   <td class="table-data">
@@ -564,7 +559,7 @@
 
                   <td class="table-data">
                     <div class="wrapper">
-                      <img src="./assets/images/coin-7.svg" width="20" height="20" alt="Cardano logo" class="img">
+                      <img src="{{ url_for('static', filename='assets/images/coin-7.svg') }}" width="20" height="20" alt="Cardano logo" class="img">
 
                       <h3>
                         <a href="#" class="coin-name">Cardano <span class="span">ADA</span></a>
@@ -579,7 +574,7 @@
                   <td class="table-data market-cap">$880,423,640,582</td>
 
                   <td class="table-data">
-                    <img src="./assets/images/chart-1.svg" width="100" height="40" alt="profit chart" class="chart">
+                    <img src="{{ url_for('static', filename='assets/images/chart-2.svg') }} width="100" height="40" alt="profit chart" class="chart">
                   </td>
 
                   <td class="table-data">
@@ -601,7 +596,7 @@
 
                   <td class="table-data">
                     <div class="wrapper">
-                      <img src="./assets/images/coin-8.svg" width="20" height="20" alt="Avalanche logo" class="img">
+                      <img src="{{ url_for('static', filename='assets/images/coin-8.svg') }}" width="20" height="20" alt="Avalanche logo" class="img">
 
                       <h3>
                         <a href="#" class="coin-name">Avalanche <span class="span">AVAX</span></a>
@@ -616,7 +611,7 @@
                   <td class="table-data market-cap">$880,423,640,582</td>
 
                   <td class="table-data">
-                    <img src="./assets/images/chart-1.svg" width="100" height="40" alt="profit chart" class="chart">
+                    <img src="{{ url_for('static', filename='assets/images/chart-1.svg') }}" width="100" height="40" alt="profit chart" class="chart">
                   </td>
 
                   <td class="table-data">
@@ -642,108 +637,7 @@
         - #INSTRUCTION
       -->
 
-      <section class="section instruction" aria-label="instruction" data-section>
-        <div class="container">
-
-          <h2 class="h2 section-title">How It Work</h2>
-
-          <p class="section-text">
-            Stacks is a production-ready library of stackable content blocks built in React Native.
-          </p>
-
-          <ul class="instruction-list">
-
-            <li>
-              <div class="instruction-card">
-
-                <figure class="card-banner">
-                  <img src="./assets/images/instruction-1.png" width="96" height="96" loading="lazy" alt="Step 1"
-                    class="img">
-                </figure>
-
-                <p class="card-subtitle">Step 1</p>
-
-                <h3 class="h3 card-title">Download</h3>
-
-                <p class="card-text">
-                  Stacks Is A Production-Ready Library Of Stackable Content Blocks Built In React Native.
-                </p>
-
-              </div>
-            </li>
-
-            <li>
-              <div class="instruction-card">
-
-                <figure class="card-banner">
-                  <img src="./assets/images/instruction-2.png" width="96" height="96" loading="lazy" alt="Step 2"
-                    class="img">
-                </figure>
-
-                <p class="card-subtitle">Step 2</p>
-
-                <h3 class="h3 card-title">Connect Wallet</h3>
-
-                <p class="card-text">
-                  Stacks Is A Production-Ready Library Of Stackable Content Blocks Built In React Native.
-                </p>
-
-              </div>
-            </li>
-
-            <li>
-              <div class="instruction-card">
-
-                <figure class="card-banner">
-                  <img src="./assets/images/instruction-3.png" width="96" height="96" loading="lazy" alt="Step 3"
-                    class="img">
-                </figure>
-
-                <p class="card-subtitle">Step 3</p>
-
-                <h3 class="h3 card-title">Start Trading</h3>
-
-                <p class="card-text">
-                  Stacks Is A Production-Ready Library Of Stackable Content Blocks Built In React Native.
-                </p>
-
-              </div>
-            </li>
-
-            <li>
-              <div class="instruction-card">
-
-                <figure class="card-banner">
-                  <img src="./assets/images/instruction-4.png" width="96" height="96" loading="lazy" alt="Step 4"
-                    class="img">
-                </figure>
-
-                <p class="card-subtitle">Step 4</p>
-
-                <h3 class="h3 card-title">Earn Money</h3>
-
-                <p class="card-text">
-                  Stacks Is A Production-Ready Library Of Stackable Content Blocks Built In React Native.
-                </p>
-
-              </div>
-            </li>
-
-          </ul>
-
-        </div>
-      </section>
-      <section class="section prediction" aria-label="prediction" data-section>
-        <div class="container">
-          <h2 class="h2 section-title">Bitcoin Price Prediction</h2>
-          <form id="predictForm">
-            <label for="prices">Enter Bitcoin Prices (comma separated):</label>
-            <input type="text" id="prices" name="prices">
-            <button type="button" onclick="getPrediction()">Predict</button>
-          </form>
-          <p id="prediction"></p>
-        </div>
-      </section>
+     
 
 
 
@@ -756,7 +650,7 @@
         <div class="container">
 
           <figure class="about-banner">
-            <img src="./assets/images/about-banner.png" width="748" height="436" loading="lazy" alt="about banner"
+            <img src="{{ url_for('static', filename='assets/images/about-banner.png') }}" width="748" height="436" loading="lazy" alt="about banner"
               class="w-100">
           </figure>
 
@@ -817,68 +711,7 @@
         - #APP
       -->
 
-      <section class="section app" aria-label="app" data-section>
-        <div class="container">
-
-          <div class="app-content">
-
-            <h2 class="h2 section-title">Free Your Money & Invest With Confident</h2>
-
-            <p class="section-text">
-              With Cryptor Trade, you can be sure your trading skills are matched
-            </p>
-
-            <ul class="section-list">
-
-              <li class="section-item">
-                <div class="title-wrapper">
-                  <ion-icon name="checkmark-circle" aria-hidden="true"></ion-icon>
-
-                  <h3 class="h3 item-title">Buy, Sell, And Trade On The Go</h3>
-                </div>
-
-                <p class="item-text">
-                  Manage Your Holdings From Your Mobile Decive
-                </p>
-              </li>
-
-              <li class="section-item">
-                <div class="title-wrapper">
-                  <ion-icon name="checkmark-circle" aria-hidden="true"></ion-icon>
-
-                  <h3 class="h3 item-title">Take Control Of Your Wealth</h3>
-                </div>
-
-                <p class="item-text">
-                  Rest Assured You (And Only You) Have Access To Your Funds
-                </p>
-              </li>
-
-            </ul>
-
-            <div class="app-wrapper">
-              <a href="#">
-                <img src="./assets/images/googleplay.png" width="135" height="40" loading="lazy"
-                  alt="get it on google play">
-              </a>
-
-              <a href="#">
-                <img src="./assets/images/appstore.png" width="120" height="40" loading="lazy"
-                  alt="download on the app store">
-              </a>
-            </div>
-
-          </div>
-
-          <div class="app-banner">
-            <img src="./assets/images/app-banner.png" width="618" height="526" loading="lazy" alt="app banner"
-              class="w-100">
-
-            <span class="span">Scan To Download</span>
-          </div>
-
-        </div>
-      </section>
+      
 
     </article>
   </main>
@@ -899,18 +732,18 @@
         <div class="footer-brand">
 
           <a href="#" class="logo">
-            <img src="./assets/images/logo.svg" width="50" height="50" alt="RapidEx logo">
+            <img src="{{ url_for('static', filename='assets/images/logo.svg') }}" width="50" height="50" alt="RapidEx logo">
             RapidEx
           </a>
 
           <h2 class="footer-title">Let's talk! 🤙</h2>
 
-          <a href="tel:+123456789101" class="footer-contact-link">+12 345 678 9101</a>
+          <a href="tel:+123456789101" class="footer-contact-link">+91 6360732957</a>
 
-          <a href="mailto:hello.RapidEx@gmail.com" class="footer-contact-link">hello.RapidEx@gmail.com</a>
+          <a href="mailto:hello.RapidEx@gmail.com" class="footer-contact-link">sujay0620@gmail.com</a>
 
           <address class="footer-contact-link">
-            Cecilia Chapman 711-2880 Nulla St. Mankato Mississippi 96522
+            Bengaluru, Karnataka
           </address>
 
         </div>
@@ -1046,7 +879,7 @@
       <div class="container">
 
         <p class="copyright">
-          &copy; 2022 Rapid All Rights Reserved by <a href="#" class="copyright-link">codewithsadee</a>
+          &copy; 2022 Rapid All Rights Reserved by <a href="#" class="copyright-link">sujay0620</a>
         </p>
 
         <ul class="social-list">
@@ -1089,7 +922,7 @@
   <!-- 
     - custom js link
   -->
-  <script src="./assets/js/script.js" defer></script>
+  <script src="{{ url_for('static', filename='assets/js/script.js') }}" defer></script>
 
   <!-- 
     - ionicon link

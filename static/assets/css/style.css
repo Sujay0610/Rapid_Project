@@ -1251,3 +1251,57 @@ address.footer-contact-link { max-width: 30ch; }
   .footer-brand { grid-column: auto; }
 
 }
+
+form {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+select, input[type="file"], input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #fff;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+select:focus, input[type="file"]:focus, input[type="number"]:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Add these styles to your style.css file */
+
+/* General paragraph styling */
+p {
+  font-family: 'DM Sans', sans-serif; /* Use the Google font you included */
+  font-size: 16px; /* Adjust the size as needed */
+  line-height: 1.5; /* Improve readability */
+  color: #333; /* Dark gray color for the text */
+  margin-bottom: 16px; /* Space between paragraphs */
+}
+
+/* Style for paragraph within the results div */
+#results p {
+  font-weight: 500; /* Slightly bolder text for emphasis */
+  color: #ffffffe0; /* Change the color to match your theme */
+}
+
+/* Highlighted paragraph (for potential future use) */
+p.highlight {
+  background-color: #f9f9f9; /* Light background to highlight the paragraph */
+  border-left: 4px solid #007bff; /* Blue border to accentuate the highlight */
+  padding: 10px 15px; /* Add some padding */
+}

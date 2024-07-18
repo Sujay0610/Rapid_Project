@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RapidEx - Buy & Sell Digital Assets In The RapidEx</title>
+
+  <!-- favicon -->
+  <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.svg') }}" type="image/svg+xml">
+
+  <!-- custom css link -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/style.css') }}">
+
+  <!-- google font link -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header class="header" data-header>
+    <div class="container">
+      <a href="#" class="logo">
+        <img src="{{ url_for('static', filename='assets/images/logo.svg') }}" width="32" height="32" alt="RapidEx logo">
+        RapidEx
+      </a>
+
+      <nav class="navbar" data-navbar>
+        <ul class="navbar-list">
+          <li class="navbar-item">
+            <a href="/homepage" class="navbar-link" data-nav-link>Homepage</a>
+          </li>
+          <li class="navbar-item">
+            <a href="prediction.html" class="navbar-link active" data-nav-link>Price Prediction</a>
+          </li>
+        </ul>
+      </nav>
+
+      <button class="nav-toggle-btn" aria-label="Toggle menu" data-nav-toggler>
+        <span class="line line-1"></span>
+        <span class="line line-2"></span>
+        <span class="line line-3"></span>
+      </button>
+
+      <a href="https://portfolio.metamask.io" class="btn btn-outline">Wallet</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <h2 class="h2 section-title">Cryptocurrency Price Prediction</h2>
+      <form id="predictForm" enctype="multipart/form-data">
+        <label for="crypto">Select Cryptocurrency:</label>
+        <select id="crypto" name="crypto">
+          <option value="BTC">Bitcoin (BTC)</option>
+          <option value="ETH">Ethereum (ETH)</option>
+          <option value="LTC">Litecoin (LTC)</option>
+        </select>
+
+        <label for="model">Select Model:</label>
+        <select id="model" name="model">
+          <option value="ANN">ANN</option>
+          <option value="LSTM">LSTM</option>
+          <option value="GRU">GRU</option>
+          <option value="LSTM-GRU">LSTM-GRU</option>
+          <option value="GBM">GBM</option>
+          <option value="RFR">Random Forest</option>
+        </select>
+
+        <label for="seq_length">Sequence Length:</label>
+        <input type="number" id="seq_length" name="seq_length" min="1" value="60">
+
+        <label for="csvFile">Upload a CSV file: </label>
+        <input type="file" id="csvFile" name="csvFile" accept=".csv">
+        <button type="button" onclick="uploadCSV()">Upload & Predict</button>
+      </form>
+      <div id="results"></div>
+    </div>
+  </main>
+
+  <script>
+    function uploadCSV() {
+      const formData = new FormData(document.getElementById('predictForm'));
+      fetch('/predict', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('results').innerHTML = `
+          <p>Root Mean Square Error (RMSE): ${data.mse}</p>
+          <p>Mean Absolute Percentage Error (MAPE): ${data.mape*100}%</p>
+          <img src="data:image/png;base64,${data.plot_url}" alt="Prediction Plot">
+        `;
+      })
+      .catch(error => console.error('Error:', error));
+    }
+  </script>
+
+  <script src="{{ url_for('static', filename='assets/js/script.js') }}" defer></script>
+
+  <!-- ionicon link -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>

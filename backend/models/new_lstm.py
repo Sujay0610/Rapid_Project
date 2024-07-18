@@ -60,7 +60,7 @@ def compute_accuracy(y_true, y_pred):
 
 def predict_future(model, last_sequence, scaler, seq_length, horizon_days):
     future_predictions = []
-    current_sequence = last_sequence
+    current_sequence = last_sequence.copy()  # Make a copy to avoid modifying the original
     
     for _ in range(horizon_days):
         prediction_scaled = model.predict(current_sequence.reshape(1, seq_length, 1))
@@ -73,12 +73,14 @@ def predict_future(model, last_sequence, scaler, seq_length, horizon_days):
     return future_predictions
 
 def main():
+    np.random.seed(0)
+    tf.random.set_seed(0)
     data = load_data('data/BTC-USD.csv')
     train_size = int(len(data) * 0.8)
     train, test = data.iloc[:train_size], data.iloc[train_size:]
 
     seq_length = 60
-    horizon_days = 20  # Number of days to predict into the future
+    horizon_days = 30  # Number of days to predict into the future
 
     X, y, scaler = prepare_lstm_data(data, seq_length)
     X_train, y_train = X[:train_size], y[:train_size]  # Use full training set
@@ -89,9 +91,9 @@ def main():
 
     lstm_model = build_lstm_model(seq_length)
 
-    # Increase training epochs
+    # Increase training epochs and add early stopping
     early_stopping = tf.keras.callbacks.EarlyStopping(monitor='val_loss', patience=10, restore_best_weights=True)
-    lstm_model.fit(X_train, y_train, batch_size=20, epochs=10, validation_split=0.2, callbacks=[early_stopping])
+    lstm_model.fit(X_train, y_train, batch_size=32, epochs=20, validation_split=0.2, callbacks=[early_stopping])
 
     lstm_pred = lstm_model.predict(X_test)
     lstm_pred = scaler.inverse_transform(lstm_pred)
@@ -104,7 +106,7 @@ def main():
     print(f'MAPE: {mape * 100}%')
 
     # Predict future prices
-    last_sequence = X_test[-1]
+    last_sequence = X_test[-1].copy()  # Make a copy to avoid modifying X_test
     future_predictions = predict_future(lstm_model, last_sequence, scaler, seq_length, horizon_days)
     future_dates = pd.date_range(start=data.index[-1], periods=horizon_days+1)[1:]
 
