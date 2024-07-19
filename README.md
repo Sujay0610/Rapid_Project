@@ -20,7 +20,7 @@
 <br />
 
 
-[![Watch the video](images/thumbnail.png)](docs/av_summary.mp4)
+![Watch the video](docs/av_summary.mp4)
 
 If you want to contact with me you can reach me at sujay0610@gmail.com
 
