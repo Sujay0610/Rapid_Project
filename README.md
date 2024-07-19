@@ -18,8 +18,8 @@
 
 <br />
 
-[![Watch the video]([https://github.com/Sujay0610/Rapid_Project/blob/main/docs/av_summary.mp4])
-
+![Watch the video]
+(https://github.com/Sujay0610/Rapid_Project/blob/main/docs/av_summary.mp4)
 #
 ### Contact
 
