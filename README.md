@@ -12,15 +12,13 @@
   <h2 align="center">RapidEx - Cryptocurrency Website</h2>
 
   RapidEx is a fully responsive cryptocurrency website, <br />Responsive for all devices, build using HTML, CSS, and JavaScript.
-  <video width="320" height="240" controls>
-  <source src="docs/av_summary.mp4" type="video/mp4">
-  </video>
+  
 
 </div>
 
 <br />
 
-
+[![Watch the video]([https://raw.githubusercontent.com/yourusername/yourrepository/main/assets/video.mp4](https://github.com/Sujay0610/Rapid_Project/blob/main/docs/av_summary.mp4))
 
 #
 ### Contact
