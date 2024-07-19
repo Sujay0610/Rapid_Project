@@ -13,10 +13,7 @@
 
   RapidEx is a fully responsive cryptocurrency website, <br />Responsive for all devices, build using HTML, CSS, and JavaScript.
 
-  <video width="320" height="240" controls>
-  <source src="docs/av_summary.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-  </video>
+ 
 
 </div>
 
@@ -24,8 +21,11 @@
 
 
 ![Watch the video]
-(https://github.com/Sujay0610/Rapid_Project/blob/main/docs/av_summary.mp4)
-#
+
+ <video width="320" height="240" controls>
+  <source src="docs/av_summary.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+  </video>
 ### Contact
 
 If you want to contact with me you can reach me at sujay0610@gmail.com
