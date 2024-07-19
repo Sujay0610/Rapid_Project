@@ -17,6 +17,10 @@
 </div>
 
 <br />
+<video width="320" height="240" controls>
+  <source src="/blob/main/docs/av_summary.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 
 ![Watch the video]
 (https://github.com/Sujay0610/Rapid_Project/blob/main/docs/av_summary.mp4)
