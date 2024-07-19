@@ -20,13 +20,7 @@
 <br />
 
 
-![Watch the video]
-
- <video width="320" height="240" controls>
-  <source src="docs/av_summary.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-  </video>
-### Contact
+[![Watch the video](images/thumbnail.png)](docs/av_summary.mp4)
 
 If you want to contact with me you can reach me at sujay0610@gmail.com
 
