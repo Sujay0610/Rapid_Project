@@ -116,7 +116,7 @@ def plot_results(train, test, predictions, model_name, seq_length):
 def index():
     return render_template('prediction.html')
 
-@app.route('/homepage')
+@app.route('/')
 def homepage():
     return render_template('index.html')
 

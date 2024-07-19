@@ -17,6 +17,15 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    #results {
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+    #results.visible {
+      opacity: 1;
+    }
+  </style>
 </head>
 
 <body>
@@ -30,10 +39,10 @@
       <nav class="navbar" data-navbar>
         <ul class="navbar-list">
           <li class="navbar-item">
-            <a href="/homepage" class="navbar-link" data-nav-link>Homepage</a>
+            <a href="/" class="navbar-link" data-nav-link>Homepage</a>
           </li>
           <li class="navbar-item">
-            <a href="prediction.html" class="navbar-link active" data-nav-link>Price Prediction</a>
+            <a href="/prediction" class="navbar-link active" data-nav-link>Price Prediction</a>
           </li>
         </ul>
       </nav>
@@ -63,39 +72,51 @@
         <select id="model" name="model">
           <option value="ANN">ANN</option>
           <option value="LSTM">LSTM</option>
-          <option value="GRU">GRU</option>
           <option value="LSTM-GRU">LSTM-GRU</option>
           <option value="GBM">GBM</option>
           <option value="RFR">Random Forest</option>
         </select>
 
-        <label for="seq_length">Sequence Length:</label>
+        <label for="seq_length">Sequence Length For Prediction:</label>
         <input type="number" id="seq_length" name="seq_length" min="1" value="60">
 
-        <label for="csvFile">Upload a CSV file: </label>
+        <label for="csvFile">Upload a CSV file ({crypto}-USD.csv from yahoo finance):</label>
         <input type="file" id="csvFile" name="csvFile" accept=".csv">
         <button type="button" onclick="uploadCSV()">Upload & Predict</button>
       </form>
       <div id="results"></div>
+      <div id="loading" style="display: none;">
+        <img src="{{ url_for('static', filename='assets/images/loading.gif') }}" alt="Loading..." width="60" height="60" style="padding-left: 20px;">
+      </div>
     </div>
   </main>
 
   <script>
     function uploadCSV() {
       const formData = new FormData(document.getElementById('predictForm'));
+      document.getElementById('loading').style.display = 'block';
+      document.getElementById('results').innerHTML = '';
+      document.getElementById('results').classList.remove('visible');
+
       fetch('/predict', {
         method: 'POST',
         body: formData
       })
       .then(response => response.json())
       .then(data => {
+        document.getElementById('loading').style.display = 'none';
         document.getElementById('results').innerHTML = `
           <p>Root Mean Square Error (RMSE): ${data.mse}</p>
-          <p>Mean Absolute Percentage Error (MAPE): ${data.mape*100}%</p>
+          <p>Mean Absolute Percentage Error (MAPE): ${data.mape * 100}%</p>
+          <p>Real v/s Prediction Plot</p>
           <img src="data:image/png;base64,${data.plot_url}" alt="Prediction Plot">
         `;
+        document.getElementById('results').classList.add('visible');
       })
-      .catch(error => console.error('Error:', error));
+      .catch(error => {
+        document.getElementById('loading').style.display = 'none';
+        console.error('Error:', error);
+      });
     }
   </script>
 
