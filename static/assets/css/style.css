@@ -191,7 +191,8 @@ body.active { overflow: hidden; }
 }
 
 #predictForm {
-  margin-bottom: 20px; /* Example margin */
+  margin-bottom: 20px;
+  background-color: #222222;
 }
 
 #predictForm label {
@@ -205,7 +206,8 @@ body.active { overflow: hidden; }
   padding: 10px;
   font-size: 16px; /* Example font size */
   border: 1px solid #ccc; /* Example border */
-  border-radius: 4px; /* Example border radius */
+  border-radius: 4px;
+   /* Example border radius */
 }
 
 #predictForm button {
@@ -214,11 +216,13 @@ body.active { overflow: hidden; }
   color: #fff; /* Example text color */
   border: none;
   cursor: pointer;
-  font-size: 16px; /* Example font size */
+  font-size: 16px;
+   /* Example font size */
 }
 
 #predictForm button:hover {
   background-color: #0056b3; /* Example hover background color */
+  border: 1px solid #ccc;
 }
 
 #prediction {
@@ -462,6 +466,7 @@ body.active { overflow: hidden; }
 .hero-text {
   font-size: var(--fs-5);
   margin-block: 25px 40px;
+  color: #e0e0e0;
 }
 
 
@@ -702,8 +707,13 @@ body.active { overflow: hidden; }
   border-color: var(--blue-crayola);
 }
 
+.section-text {
+  color:#bfbfbf
+}
 
-
+.item-text{
+  color: #bfbfbf;
+}
 
 
 /*-----------------------------------*\
