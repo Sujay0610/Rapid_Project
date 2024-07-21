@@ -112,9 +112,13 @@ def plot_results(train, test, predictions, model_name, seq_length):
     plt.close()
     return plot_url
 
-@app.route('/')
+@app.route('/prediction')
 def index():
     return render_template('prediction.html')
+
+@app.route('/')
+def homepage():
+    return render_template('index.html')
 
 @app.route('/predict', methods=['POST'])
 def predict():
